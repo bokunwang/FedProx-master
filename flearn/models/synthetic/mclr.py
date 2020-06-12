@@ -18,7 +18,7 @@ class Model(object):
 
         # select optimizer
         if optimizer == 'SGD':
-            self.lr = tf.placeholder(tf.float32, shape=(), name='learning rate')
+            self.lr = tf.placeholder(tf.float32, shape=(), name='lr)
             selected_optimizer = tf.train.GradientDescentOptimizer(learning_rate=self.lr)
 
         # create computation graph        
