@@ -47,7 +47,7 @@ class Client(object):
         bytes_r = self.model.size
         return (self.num_samples, soln), (bytes_w, comp, bytes_r)
 
-    def solve_iters(self, num_iters=1, batch_size=10):
+    def solve_iters(self, num_iters=1, batch_size=10, lr=0.01):
         '''Solves local optimization problem
 
         Return:
@@ -59,7 +59,7 @@ class Client(object):
         '''
 
         bytes_w = self.model.size
-        soln, comp = self.model.solve_iters(self.train_data, num_iters, batch_size)
+        soln, comp = self.model.solve_iters(self.train_data, num_iters, batch_size, lr)
         bytes_r = self.model.size
         return (self.num_samples, soln), (bytes_w, comp, bytes_r)
 
