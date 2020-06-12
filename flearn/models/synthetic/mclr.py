@@ -84,12 +84,12 @@ class Model(object):
         comp = num_epochs * (len(data['y'])//batch_size) * batch_size * self.flops
         return soln, comp
 
-    def solve_iters(self, data, num_iters=1, batch_size=32):
+    def solve_iters(self, data, num_iters=1, batch_size=32, lr=0.01):
         '''Solves local optimization problem'''
 
         for X, y in batch_data_multiple_iters(data, batch_size, num_iters):
             with self.graph.as_default():
-                self.sess.run(self.train_op, feed_dict={self.features: X, self.labels: y})
+                self.sess.run(self.train_op, feed_dict={self.features: X, self.labels: y, self.lr: lr})
         soln = self.get_params()
         comp = 0
         return soln, comp
