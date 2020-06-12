@@ -10,7 +10,8 @@ class Server(BaseFedarated):
     def __init__(self, params, learner, dataset):
         self.lr = params['learning_rate']
         print('Using Federated avg to Train')
-        self.inner_opt = tf.train.GradientDescentOptimizer(learning_rate=params['learning_rate'])
+        # self.inner_opt = tf.train.GradientDescentOptimizer(learning_rate=params['learning_rate'])
+        self.inner_opt = 'SGD'
         super(Server, self).__init__(params, learner, dataset)
 
     def train(self):

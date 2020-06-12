@@ -16,11 +16,16 @@ class Model(object):
         # params
         self.num_classes = num_classes
 
+        # select optimizer
+        if optimizer == 'SGD':
+            self.lr = tf.placeholder(tf.float32, shape=(), name='learning rate')
+            selected_optimizer = tf.train.GradientDescentOptimizer(learning_rate=self.lr)
+
         # create computation graph        
         self.graph = tf.Graph()
         with self.graph.as_default():
             tf.set_random_seed(123+seed)
-            self.features, self.labels, self.train_op, self.grads, self.eval_metric_ops, self.loss, self.pred = self.create_model(optimizer)
+            self.features, self.labels, self.train_op, self.grads, self.eval_metric_ops, self.loss, self.pred = self.create_model(selected_optimizer)
             self.saver = tf.train.Saver()
         self.sess = tf.Session(graph=self.graph)
 

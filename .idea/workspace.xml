@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="87f67cae-c282-4d18-b22d-2e741311b78d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flearn/models/synthetic/mclr.py" beforeDir="false" afterPath="$PROJECT_DIR$/flearn/models/synthetic/mclr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flearn/trainers/fedavg_const.py" beforeDir="false" afterPath="$PROJECT_DIR$/flearn/trainers/fedavg_const.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
